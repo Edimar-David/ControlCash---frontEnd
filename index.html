@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ControlCash — Controle financeiro premium</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div class="bg-grid"></div>
+
+    <header class="navbar" id="navbar">
+        <div class="container nav-content">
+
+            <a href="#" class="logo">
+                <div class="logo-dot"></div>
+                <span>ControlCash</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#benefits">Benefícios</a>
+                <a href="#ai">IA</a>
+                <a href="#pricing">Preços</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="primary-btn small" onclick="window.location.href='auth.html'">
+                    Entrar
+                </button>
+            </div>
+
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#benefits">Benefícios</a>
+            <a href="#ai">IA</a>
+            <a href="#pricing">Preços</a>
+
+            <button class="primary-btn full">
+                Teste grátis
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="container hero-grid">
+
+                <div class="hero-content reveal">
+
+                    <div class="badge">
+                        Controle financeiro inteligente
+                    </div>
+
+                    <h1>
+                        Entenda para onde seu dinheiro está indo.
+                    </h1>
+
+                    <p>
+                        Visualize gastos, acompanhe hábitos financeiros
+                        e receba insights claros em uma experiência simples,
+                        refinada e inteligente.
+                    </p>
+
+                    <div class="hero-actions">
+                        <button class="primary-btn"  onclick="window.location.href='auth.html'">
+                            Teste grátis
+                        </button>
+
+                        <button class="ghost-btn large">
+                            Ver demonstração
+                        </button>
+                    </div>
+
+                    <div class="hero-metrics">
+                        <div>
+                            <strong>+48 mil</strong>
+                            <span>usuários ativos</span>
+                        </div>
+
+                        <div>
+                            <strong>R$12M+</strong>
+                            <span>monitorados</span>
+                        </div>
+
+                        <div>
+                            <strong>4.9</strong>
+                            <span>avaliação média</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="dashboard-wrapper reveal">
+
+                    <div class="dashboard-card">
+
+                        <div class="dashboard-top">
+                            <div class="dashboard-title">
+                                <span class="dot"></span>
+                                Painel financeiro
+                            </div>
+
+                            <div class="dashboard-chip">
+                                Atualizado agora
+                            </div>
+                        </div>
+
+                        <div class="balance-card">
+                            <span>Saldo disponível</span>
+                            <h2>R$ 8.420,00</h2>
+
+                            <div class="balance-trend positive">
+                                +12% este mês
+                            </div>
+                        </div>
+
+                        <div class="chart-area">
+
+                            <div class="chart-header">
+                                <span>Gastos mensais</span>
+                                <span>Últimos 6 meses</span>
+                            </div>
+
+                            <div class="chart">
+                                <div class="bar h1"></div>
+                                <div class="bar h2"></div>
+                                <div class="bar h3"></div>
+                                <div class="bar h4"></div>
+                                <div class="bar h5"></div>
+                                <div class="bar h6"></div>
+                            </div>
+
+                        </div>
+
+                        <div class="expenses-list">
+
+                            <div class="expense-item">
+                                <div>
+                                    <strong>Alimentação</strong>
+                                    <span>Cartão Nubank</span>
+                                </div>
+
+                                <p>R$ 840</p>
+                            </div>
+
+                            <div class="expense-item">
+                                <div>
+                                    <strong>Transporte</strong>
+                                    <span>Últimos 30 dias</span>
+                                </div>
+
+                                <p>R$ 320</p>
+                            </div>
+
+                            <div class="expense-item">
+                                <div>
+                                    <strong>Assinaturas</strong>
+                                    <span>Serviços recorrentes</span>
+                                </div>
+
+                                <p>R$ 194</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="benefits" id="benefits">
+
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-label">
+                        Benefícios
+                    </span>
+
+                    <h2>
+                        Clareza financeira sem complexidade.
+                    </h2>
+                </div>
+
+                <div class="benefits-grid">
+
+                    <article class="benefit-card reveal">
+                        <div class="icon blue"></div>
+
+                        <h3>Visão completa</h3>
+
+                        <p>
+                            Entenda exatamente onde seu dinheiro é gasto
+                            com categorias automáticas e relatórios claros.
+                        </p>
+                    </article>
+
+                    <article class="benefit-card reveal">
+                        <div class="icon green"></div>
+
+                        <h3>Controle em tempo real</h3>
+
+                        <p>
+                            Acompanhe entradas, saídas e metas financeiras
+                            sem planilhas ou processos complicados.
+                        </p>
+                    </article>
+
+                    <article class="benefit-card reveal">
+                        <div class="icon orange"></div>
+
+                        <h3>Experiência refinada</h3>
+
+                        <p>
+                            Interface minimalista desenhada para manter
+                            foco, velocidade e simplicidade.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="ai-section" id="ai">
+
+            <div class="container ai-container reveal">
+
+                <div class="ai-content">
+
+                    <span class="section-label">
+                        IA Premium
+                    </span>
+
+                    <h2>
+                        Insights inteligentes que antecipam seus gastos.
+                    </h2>
+
+                    <p>
+                        A IA do ControlCash identifica padrões,
+                        prevê despesas futuras e sugere melhorias
+                        financeiras automaticamente.
+                    </p>
+
+                    <ul class="ai-list">
+                        <li>Previsões financeiras automáticas</li>
+                        <li>Recomendações inteligentes</li>
+                        <li>Alertas personalizados</li>
+                        <li>Análise comportamental avançada</li>
+                    </ul>
+
+                </div>
+
+                <div class="ai-panel">
+
+                    <div class="ai-card">
+                        <span>IA Financeira</span>
+
+                        <h3>
+                            Você gastou 18% a mais com delivery este mês.
+                        </h3>
+
+                        <p>
+                            Reduzindo R$ 22 por semana,
+                            você economiza R$ 1.144 em 12 meses.
+                        </p>
+
+                        <div class="ai-footer">
+                            Recomendação inteligente ativa
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="pricing" id="pricing">
+
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-label">
+                        Preços
+                    </span>
+
+                    <h2>
+                        Simples, transparente e direto.
+                    </h2>
+                </div>
+
+                <div class="pricing-grid">
+
+                    <article class="price-card reveal">
+
+                        <div>
+                            <span class="plan-label">
+                                Gratuito
+                            </span>
+
+                            <h3>Comece sem custo</h3>
+
+                            <div class="price">
+                                R$0
+                            </div>
+
+                            <p>
+                                Ideal para organização financeira básica.
+                            </p>
+                        </div>
+
+                        <ul>
+                            <li>Controle de gastos</li>
+                            <li>Categorias automáticas</li>
+                            <li>Dashboard financeiro</li>
+                        </ul>
+
+                        <button class="ghost-btn full">
+                            Começar grátis
+                        </button>
+
+                    </article>
+
+                    <article class="price-card featured reveal">
+
+                        <div class="premium-badge">
+                            Premium
+                        </div>
+
+                        <div>
+                            <span class="plan-label">
+                                Premium
+                            </span>
+
+                            <h3>Controle financeiro inteligente</h3>
+
+                            <div class="price">
+                                R$30
+                                <span>/ mês</span>
+                            </div>
+
+                            <p>
+                                Recursos avançados para decisões mais inteligentes.
+                            </p>
+                        </div>
+
+                        <ul>
+                            <li>Análises com IA</li>
+                            <li>Insights financeiros inteligentes</li>
+                            <li>Previsão de gastos</li>
+                            <li>Recomendações automáticas</li>
+                        </ul>
+
+                        <button class="primary-btn full">
+                            Assinar premium
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="final-cta">
+
+            <div class="container reveal">
+
+                <div class="cta-card">
+
+                    <span class="section-label">
+                        ControlCash
+                    </span>
+
+                    <h2>
+                        Menos ruído. Mais clareza financeira.
+                    </h2>
+
+                    <p>
+                        Descubra uma nova forma de visualizar e controlar seu dinheiro.
+                    </p>
+
+                    <button class="primary-btn">
+                        Teste grátis
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+     <footer class="footer">
+        <div class="content">
+            <span>
+                
+                <br>
+                
+            </span>
+        </div>
+    </footer>
+
+    <footer class="footer">
+        <div class="container footer-content">
+
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-dot"></div>
+                    <span>ControlCash</span>
+                </div>
+                <p>
+                    © 2026 <a href="https://novastackweb.github.io/NovaStackLandingPage/">Novastack</a>. Todos os direitos
+                reservados.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#">Privacidade</a>
+                <a href="#">Termos</a>
+                <a href="#">Contato</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>ControlCash — Login</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="auth.css"/>
+</head>
+
+<body>
+
+  <div class="bg-grid"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+
+    <div class="container nav-content">
+
+      <a href="index.html" class="logo">
+        <div class="logo-dot"></div>
+        <span>ControlCash</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#">NOVA STACK</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="ghost-btn small" onclick="window.location.href='index.html'">
+          Voltar ao site
+        </button>
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- AUTH -->
+  <main class="auth-page">
+
+    <section class="auth-wrapper">
+
+      <!-- LEFT -->
+      <div class="auth-visual">
+
+        <div class="visual-overlay"></div>
+
+        <div class="visual-content">
+
+          <div class="visual-badge">
+            IA financeira ativa
+          </div>
+
+          <div class="visual-bottom">
+
+            <h2>
+              Controle inteligente<br/>
+              das suas finanças.
+            </h2>
+
+            <p>
+              Insights em tempo real,
+              previsões financeiras
+              e clareza total sobre seus gastos.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="auth-content">
+
+        <!-- LOGIN -->
+        <form class="auth-form active" id="loginForm">
+
+          <div class="form-header">
+            <h1>Entrar</h1>
+
+            <p>
+              Ainda não possui conta?
+              <a href="#" id="showRegister">
+                Criar conta
+              </a>
+            </p>
+          </div>
+
+          <div class="input-group">
+            <input
+              type="email"
+              id="loginEmail"
+              placeholder="Seu email"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Sua senha"
+              required
+            />
+          </div>
+
+          <p class="error-message" id="loginError"></p>
+
+          <button type="submit" class="primary-btn full" id="loginBtn">
+            <span>Entrar</span>
+            <div class="spinner"></div>
+          </button>
+
+        </form>
+
+        <!-- REGISTER -->
+        <form class="auth-form" id="registerForm">
+
+          <div class="form-header">
+            <h1>Criar conta</h1>
+
+            <p>
+              Já possui conta?
+              <a href="#" id="showLogin">
+                Entrar
+              </a>
+            </p>
+          </div>
+
+          <div class="input-group">
+            <input
+              type="text"
+              id="registerName"
+              placeholder="Seu nome"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <input
+              type="email"
+              id="registerEmail"
+              placeholder="Seu email"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <input
+              type="password"
+              id="registerPassword"
+              placeholder="Sua senha"
+              required
+            />
+          </div>
+
+          <p class="error-message" id="registerError"></p>
+
+          <button type="submit" class="primary-btn full" id="registerBtn">
+            <span>Criar conta</span>
+            <div class="spinner"></div>
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="auth.js"></script>
+
+</body>
+</html>
