@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ControlCash</title>
+
+  <link rel="stylesheet" href="/styles/dashboard.css" />
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+</head>
+
+<body>
+
+  <section class="dashboard">
+
+    <aside class="sidebar">
+
+      <div class="sidebar-top">
+
+        <div class="logo">
+          <div class="logo-dot"></div>
+          <h2>ControlCash</h2>
+        </div>
+
+        <nav class="sidebar-nav">
+
+          <a href="#" class="menu-item active">
+            Dashboard
+          </a>
+
+          <a href="transactions.html" class="menu-item">
+            Transações
+          </a>
+
+          <a href="#" class="menu-item">
+            IA
+          </a>
+
+        </nav>
+
+      </div>
+
+      <div class="sidebar-bottom">
+
+        <button class="logout-btn">
+          Sair
+        </button>
+
+      </div>
+
+    </aside>
+
+    <nav class="mobile-menu">
+        <a href="transactions.html" class="mobile-item">Transações</a>
+        <a href="#" class="mobile-add">+</a>
+        <a href="#" class="mobile-item">IA</a>
+    </nav>
+
+    <main class="main-container">
+
+      <header class="topbar">
+
+        <div class="topbar-text">
+          <h1 id="welcome-title"></h1>
+          <p>Gerencie suas finanças de forma inteligente.</p>
+        </div>
+
+        <div class="topbar-actions">
+
+          <button class="ghost-btn">
+            Configurações
+          </button>
+
+        </div>
+
+      </header>
+
+      <section class="content-area">
+
+        <div class="empty-state">
+
+          <h2>Nenhuma informação carregada</h2>
+
+          <p>
+            Seus dados financeiros aparecerão aqui assim que as
+            transações forem adicionadas.
+          </p>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </section>
+
+  
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

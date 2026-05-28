@@ -1,0 +1,247 @@
+:root {
+  --bg: #09090B;
+  --surface: #141418;
+  --surface-hover: #1C1C21;
+
+  --primary: #4F8CFF;
+
+  --text: #FAFAFA;
+  --text-secondary: #A1A1AA;
+  --muted: #71717A;
+
+  --border: rgba(255,255,255,0.08);
+
+  --radius: 24px;
+
+  font-family: "Inter", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 24px;
+  padding-bottom: 120px; 
+}
+
+/* ===== LAYOUT PRINCIPAL ===== */
+
+.dashboard {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/*=====botão voltar=====*/
+  .mobile-menu {
+    position: fixed;
+
+    bottom: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: calc(100% - 32px);
+    max-width: 420px;
+
+    height: 72px;
+
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 999px;
+
+    background: rgba(20,20,24,0.82);
+
+    backdrop-filter: blur(24px);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+      0 10px 40px rgba(0,0,0,0.45);
+
+    z-index: 1000;
+    margin-top: 50px;
+  }
+
+  .mobile-item {
+    flex: 1;
+    text-decoration: none;
+
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 999px;
+
+    color: #A1A1AA;
+
+    font-size: 0.95rem;
+
+    transition: 0.2s ease;
+  }
+  .mobile-item:hover{
+    background: var(--surface-hover);
+
+    color: var(--primary);
+  }
+
+/* ===== HEADER ===== */
+
+.topbar {
+  margin-bottom: 24px;
+}
+
+.topbar-text h1 {
+  font-size: 2.2rem;
+  letter-spacing: -0.05em;
+}
+
+.topbar-text p {
+  margin-top: 8px;
+  color: var(--text-secondary);
+}
+
+/* ===== FORM CONTAINER ===== */
+
+.form-container {
+  border-radius: 32px;
+  border: 1px solid var(--border);
+
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.01)
+  );
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+
+  padding: 28px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* glow decorativo */
+.form-container::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 999px;
+
+  background: radial-gradient(
+    rgba(79,140,255,0.18),
+    transparent 70%
+  );
+
+  top: -220px;
+  right: -220px;
+
+  pointer-events: none;
+}
+
+/* ===== FORM ===== */
+
+#transactionForm {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+/* melhora em telas maiores */
+@media (min-width: 600px) {
+  #transactionForm {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .input-group:nth-child(5),
+  .submit-btn {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ===== INPUTS ===== */
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-left: 6px;
+}
+
+input,
+select,
+textarea {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+
+  border-radius: 18px;
+  padding: 14px 16px;
+
+  color: var(--text);
+  font-size: 1rem;
+
+  transition: 0.2s ease;
+  outline: none;
+}
+
+
+select option {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* foco mais claro */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgba(79,140,255,0.5);
+  background: rgba(255,255,255,0.05);
+}
+
+textarea {
+  min-height: 120px;
+  resize: none;
+  grid-column: 1 / -1;
+}
+
+/* ===== BOTÃO ===== */
+
+.submit-btn {
+  height: 54px;
+  border: none;
+  border-radius: 18px;
+
+  background: var(--primary);
+  color: white;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+
+  margin-top: 6px;
+}
+
+.submit-btn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}

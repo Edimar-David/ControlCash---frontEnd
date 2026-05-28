@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ControlCash</title>
+
+  <link rel="stylesheet" href="/styles/newTransaction.css" />
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+</head>
+
+<body>
+
+  <section class="dashboard">
+
+    <nav class="mobile-menu">
+
+        <a href="../transactions.html" class="mobile-item">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M14 7l-5 5 5 5" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+            </svg>
+             voltar</a>
+    </nav>
+
+    <main class="main-container">
+
+
+        <div class="topbar-text">
+          <h1 id="welcome-title">Nova transação</h1>
+        </div>
+
+        <section class="form-container">
+
+        <form id="transactionForm">
+
+            <div class="input-group">
+            <label for="type">Tipo</label>
+
+            <select id="type" required>
+                <option value="">Selecione</option>
+                <option value="INCOME">Receita</option>
+                <option value="EXPENSE">Despesa</option>
+            </select>
+            </div>
+
+            <div class="input-group">
+            <label for="date">Data</label>
+            <input type="date" id="date" required>
+            </div>
+
+            <div class="input-group">
+            <label for="category">Categoria</label>
+            <input type="text" id="category">
+            </div>
+
+            <div class="input-group">
+            <label for="value">Valor</label>
+            <input type="number" id="value">
+            </div>
+
+            <div class="input-group">
+            <label for="description">Descrição</label>
+            <textarea id="description"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">
+            Salvar transação
+            </button>
+
+        </form>
+
+        </section>
+
+    </main>
+
+  </section>
+
+  
+    <script src="/js/newTransaction.js"></script>
+</body>
+</html>

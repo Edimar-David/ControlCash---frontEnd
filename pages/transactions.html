@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ControlCash</title>
+
+  <link rel="stylesheet" href="/styles/transaction.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+</head>
+
+<body>
+
+  <section class="dashboard">
+
+    <aside class="sidebar">
+
+      <div class="sidebar-top">
+
+        <div class="logo">
+          <div class="logo-dot"></div>
+          <h2>ControlCash</h2>
+        </div>
+
+        <nav class="sidebar-nav">
+
+          <a href="dashboard.html" class="menu-item">
+            Dashboard
+          </a>
+
+          <a href="#" class="menu-item active">
+            Transações
+          </a>
+
+          <a href="#" class="menu-item">
+            IA
+          </a>
+
+        </nav>
+
+      </div>
+
+      <div class="sidebar-bottom">
+
+        <button class="logout-btn" onclick="window.location.href='../index.html'">
+          Sair
+        </button>
+
+      </div>
+
+    </aside>
+
+    <nav class="mobile-menu">
+
+      <a href="dashboard.html" class="mobile-item">Dashboard</a>
+      <a href="registerItem/newTransaction.html" class="mobile-add">+</a>
+      <a href="#" class="mobile-item">IA</a>
+    </nav>
+
+    <main class="main-container">
+
+      <header class="topbar">
+
+        <div class="topbar-text">
+          <h1 id="welcome-title">Transações</h1>
+          <p>Gerencie suas ultimas transações.</p>
+        </div>
+
+        <div class="topbar-actions">
+
+          <button class="ghost-btn">
+            adicionar
+          </button>
+
+        </div>
+
+      </header>
+
+      <section class="content-area">
+
+        <div class="toolbar">
+          <div class="filters">
+
+            <input type="date" id="startDate">
+            <input type="date" id="endDate">
+
+            <select id="type">
+              <option value="">Todos</option>
+              <option value="INCOME">Receita</option>
+              <option value="EXPENSE">Despesa</option>
+            </select>
+
+            <button onclick="loadTransactions()">Buscar</button>
+
+          </div>
+
+          <div class="pagination">
+
+            <button onclick="prevPage()">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" width="24" height="24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+              </svg>
+
+            </button>
+
+            <span id="pageInfo">
+              Página 0
+            </span>
+
+            <button onclick="nextPage()">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" width="24" height="24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+
+          </div>
+
+
+        </div>
+        <div id="transactions"></div>
+      </section>
+
+    </main>
+
+  </section>
+
+
+  <script src="/js/transaction.js"></script>
+</body>
+
+</html>

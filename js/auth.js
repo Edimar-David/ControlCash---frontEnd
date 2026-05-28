@@ -74,11 +74,15 @@ loginForm.addEventListener("submit", async (e) => {
     }
 
     localStorage.setItem(
-      "controlcash_token",
+      "userName",
+      data.name
+    );
+    localStorage.setItem(
+      "token",
       data.token
     );
 
-    window.location.href = "/dashboard.html";
+    window.location.href = "dashboard.html";
 
   } catch(err) {
 
@@ -132,12 +136,16 @@ registerForm.addEventListener("submit", async (e) => {
       throw new Error("Erro ao cadastrar");
     }
 
+     localStorage.setItem(
+      "userName",
+      data.name
+    );
     localStorage.setItem(
-      "controlcash_token",
+      "token",
       data.token
     );
 
-    window.location.href = "/dashboard.html";
+    window.location.href = "dashboard.html";
 
   } catch(err) {
 
