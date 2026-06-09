@@ -25,21 +25,18 @@ showLogin.addEventListener("click", (e) => {
 /* LOADING */
 
 function setLoading(button, state) {
-
-  if(state) {
+  if (state) {
     button.classList.add("loading");
     button.disabled = true;
   } else {
     button.classList.remove("loading");
     button.disabled = false;
   }
-
 }
 
 /* LOGIN */
 
 loginForm.addEventListener("submit", async (e) => {
-
   e.preventDefault();
 
   const button = document.getElementById("loginBtn");
@@ -53,54 +50,39 @@ loginForm.addEventListener("submit", async (e) => {
   const password = document.getElementById("loginPassword").value;
 
   try {
-
     const response = await fetch("http://localhost:8080/auth/login", {
       method: "POST",
 
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
+      credentials: "include",
 
       body: JSON.stringify({
         email,
-        password
-      })
+        password,
+      }),
     });
 
     const data = await response.json();
 
-    if(!response.ok) {
+    if (!response.ok) {
       throw new Error("Erro no login");
     }
 
-    localStorage.setItem(
-      "userName",
-      data.name
-    );
-    localStorage.setItem(
-      "token",
-      data.token
-    );
+    localStorage.setItem("userName", data.name);
 
     window.location.href = "dashboard.html";
-
-  } catch(err) {
-
-    error.textContent =
-      "Email ou senha inválidos.";
-
+  } catch (err) {
+    error.textContent = "Email ou senha inválidos.";
   } finally {
-
     setLoading(button, false);
-
   }
-
 });
 
 /* REGISTER */
 
 registerForm.addEventListener("submit", async (e) => {
-
   e.preventDefault();
 
   const button = document.getElementById("registerBtn");
@@ -115,47 +97,33 @@ registerForm.addEventListener("submit", async (e) => {
   const password = document.getElementById("registerPassword").value;
 
   try {
-
     const response = await fetch("http://localhost:8080/auth/register", {
       method: "POST",
 
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
+      credentials: "include",
 
       body: JSON.stringify({
         name,
         email,
-        password
-      })
+        password,
+      }),
     });
 
     const data = await response.json();
 
-    if(!response.ok) {
+    if (!response.ok) {
       throw new Error("Erro ao cadastrar");
     }
 
-     localStorage.setItem(
-      "userName",
-      data.name
-    );
-    localStorage.setItem(
-      "token",
-      data.token
-    );
+    localStorage.setItem("userName", data.name);
 
     window.location.href = "dashboard.html";
-
-  } catch(err) {
-
-    error.textContent =
-      "Não foi possível criar sua conta.";
-
+  } catch (err) {
+    error.textContent = "Não foi possível criar sua conta.";
   } finally {
-
     setLoading(button, false);
-
   }
-
 });

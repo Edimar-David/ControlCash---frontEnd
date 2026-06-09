@@ -1,31 +1,47 @@
-const navbar = document.getElementById("navbar");
+/**
+ * script.js
+ * ─────────────────────────────────────────────────────────────
+ * Navbar scroll effect, mobile menu toggle, scroll reveal.
+ * Updated to match refactored class names.
+ * ─────────────────────────────────────────────────────────────
+ */
+
+const navbar       = document.getElementById("navbar");
 const mobileToggle = document.getElementById("mobileToggle");
-const mobileMenu = document.getElementById("mobileMenu");
+const mobileMenu   = document.getElementById("mobileMenu");
 
+/* ── Navbar: add .scrolled class after 20px scroll ── */
 window.addEventListener("scroll", () => {
-    if (window.scrollY > 20) {
-        navbar.classList.add("scrolled");
-    } else {
-        navbar.classList.remove("scrolled");
-    }
+  navbar?.classList.toggle("scrolled", window.scrollY > 20);
 });
 
-mobileToggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active");
+/* ── Mobile menu: toggle visibility + aria-expanded ── */
+mobileToggle?.addEventListener("click", () => {
+  const isOpen = mobileMenu?.classList.toggle("active");
+  mobileToggle.setAttribute("aria-expanded", String(isOpen));
 });
 
-const revealElements = document.querySelectorAll(".reveal");
+/* ── Mobile menu: close on link click ── */
+mobileMenu?.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+    mobileToggle?.setAttribute("aria-expanded", "false");
+  });
+});
 
-const revealOnScroll = () => {
-    revealElements.forEach((element) => {
-        const elementTop = element.getBoundingClientRect().top;
-
-        if (elementTop < window.innerHeight - 80) {
-            element.classList.add("visible");
-        }
+/* ── Scroll reveal: IntersectionObserver ── */
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
     });
-};
+  },
+  { threshold: 0.1 }
+);
 
-window.addEventListener("scroll", revealOnScroll);
-
-revealOnScroll();
+document.querySelectorAll(".reveal").forEach((el) => {
+  revealObserver.observe(el);
+});

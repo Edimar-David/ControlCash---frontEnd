@@ -1,8 +1,18 @@
+import { transactionCard } from "./transaction/transactionView.js";
+
 const token = localStorage.getItem("token");
 
 let page = 0;
 let size = 4;
 let lastPageEmpty = false;
+
+document.getElementById("nextBtn").addEventListener("click", nextPage);
+
+document.getElementById("prevBtn").addEventListener("click", prevPage);
+
+document.getElementById("searchBtn").addEventListener("click", () => {
+  loadTransactions();
+});
 
 async function loadTransactions(resetPage = false) {
   if (resetPage) page = 0;
@@ -25,9 +35,7 @@ async function loadTransactions(resetPage = false) {
   try {
     const response = await fetch(url, {
       method: "GET",
-      headers: {
-        "Authorization": `Bearer ${token}`
-      }
+      credentials: "include",
     });
 
     if (!response.ok) {
@@ -45,7 +53,6 @@ async function loadTransactions(resetPage = false) {
     lastPageEmpty = data.length < size;
 
     updateButtons();
-
   } catch (error) {
     console.error("Erro ao buscar transações:", error);
   }
@@ -60,30 +67,40 @@ function renderTransactions(data) {
     return;
   }
 
-  data.forEach(tx => {
-    const div = document.createElement("div");
-    div.classList.add("transaction-card");
+  data.forEach((tx) => {
+    const [ano, mes, dia] = tx.date.split("-");
+    const dateFormat = `${dia}/${mes}/${ano}`;
 
-    div.innerHTML = `
-      <div class="tx-row top">
-        <span class="tx-name">${tx.description}</span>
-        <span class="tx-type ${tx.type.toLowerCase()}">${tx.type}</span>
-      </div>
+    if (tx.type === "INCOME") {
+      const svg =
+        'path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"';
+      const card = transactionCard(
+        tx.description,
+        tx.type,
+        svg,
+        "RECEITA",
+        tx.category,
+        dateFormat,
+        tx.amount,
+      );
 
-      <div class="tx-row bottom">
-        <span class="tx-category">${tx.category}</span>
-        <span class="tx-date">${tx.date}</span>
-      </div>
+      container.appendChild(card);
+    } else {
+      const svg =
+        'path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6 9 12.75l4.286-4.286a11.948 11.948 0 0 1 4.306 6.43l.776 2.898m0 0 3.182-5.511m-3.182 5.51-5.511-3.181" ';
 
-      <div class="tx-value">
-        ${tx.amount.toLocaleString("pt-BR", {
-          style: "currency",
-          currency: "BRL"
-        })}
-      </div>
-    `;
+      const card = transactionCard(
+        tx.description,
+        tx.type,
+        svg,
+        "RECEITA",
+        tx.category,
+        dateFormat,
+        tx.amount,
+      );
 
-    container.appendChild(div);
+      container.appendChild(card);
+    }
   });
 }
 
@@ -101,11 +118,14 @@ function prevPage() {
 }
 
 function updateButtons() {
-  document.querySelector(".pagination button:first-child").disabled = page === 0;
-  document.querySelector(".pagination button:last-child").disabled = lastPageEmpty;
+  document.querySelector(".pagination button:first-child").disabled =
+    page === 0;
+  document.querySelector(".pagination button:last-child").disabled =
+    lastPageEmpty;
 }
 
-document.querySelector(".filters button")
+document
+  .querySelector(".filters button")
   .addEventListener("click", () => loadTransactions(true));
 
 loadTransactions();
